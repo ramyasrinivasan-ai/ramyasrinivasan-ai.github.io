@@ -39,12 +39,12 @@
     .sec-label { text-align:center; }
 
     /* HERO */
-    #home { min-height:100vh; display:grid; grid-template-columns:1.08fr 0.92fr; align-items:start; gap:4rem; padding:8.5rem 0 5.5rem; border-bottom:1px solid var(--border); width:min(1100px,calc(100% - 48px)); margin:0 auto; box-sizing:border-box; }
+    #home { min-height:100vh; display:grid; grid-template-columns:1.18fr 0.82fr; align-items:start; gap:4rem; padding:8.2rem 0 5.2rem; border-bottom:1px solid var(--border); width:min(1080px,calc(100% - 56px)); margin:0 auto; box-sizing:border-box; }
 
     .hero-tag { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--border); border-radius:100px; padding:0.3rem 1rem; font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.5rem; animation:fadeUp 0.6s ease both; }
     .hero-tag span { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-    .hero-content { max-width: 620px; padding-top: 0.35rem; }
+    .hero-content { max-width: 620px; padding-top: 1.2rem; }
     h1 { font-family:'Inter',sans-serif; font-size:clamp(3rem,5.5vw,5.4rem); font-weight:200; line-height:1.1; letter-spacing:-0.01em; animation:fadeUp 0.6s 0.1s ease both; }
     h1 em { color:var(--teal); font-style:normal; }
     .hero-sub { margin-top:1.5rem; font-size:1.18rem; font-weight:300; color:#d0d0d0; line-height:1.8; max-width:520px; animation:fadeUp 0.6s 0.2s ease both; }
@@ -68,7 +68,7 @@
 
     /* ABOUT */
     #about { background:var(--black2); }
-    .about-grid { display:grid; grid-template-columns:1.15fr 0.85fr; gap:4rem; align-items:start; max-width:100%; }
+    .about-grid { display:grid; grid-template-columns:1.12fr 0.88fr; gap:3rem; align-items:start; }
     .about-text p { color:#d0d0d0; line-height:1.85; font-size:1.15rem; margin-bottom:1rem; font-weight:400; }
     .pills { display:flex; flex-wrap:wrap; gap:0.55rem; margin-top:1.35rem; }
     .pill { border:1px solid rgba(42,171,171,0.28); border-radius:100px; padding:0.38rem 0.95rem; font-size:0.86rem; color:#6fd2d2; font-weight:500; background:rgba(42,171,171,0.08); }
@@ -165,8 +165,8 @@
 
     /* Infographic display */
     .infographic-wrap { margin-bottom:1.5rem; }
-    .about-infographic { margin-top:2.5rem; }
-    .about-infographic img { width:100%; max-width:100%; display:block; border-radius:14px; }
+    .about-infographic { margin:2.2rem auto 0; max-width:860px; }
+    .about-infographic img { width:100%; display:block; border-radius:14px; margin:0 auto; }
     .infographic-wrap img { width:100%; border-radius:8px; display:block; }
 
     /* EDUCATION */
@@ -205,27 +205,30 @@
     .hero-photo-wrap {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
       align-self: start;
+      padding-top: 1.65rem;
     }
     .hero-photo-outer {
-      border-radius: 20px;
-      padding: 3px;
-      background: linear-gradient(160deg, var(--teal) 0%, rgba(42,171,171,0.15) 100%);
+      width: 100%;
+      max-width: 300px;
+      border-radius: 22px;
+      padding: 4px;
+      background: linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(42,171,171,0.45) 45%, rgba(255,255,255,0.08) 100%);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
     }
     .hero-photo-inner {
       border-radius: 18px;
-      padding: 3px;
-      background: var(--black);
+      padding: 4px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
       overflow: hidden;
     }
     .hero-photo-inner img {
       width: 100%;
-      height: 100%;
-      min-height: 560px;
+      height: 470px;
       object-fit: cover;
       object-position: top center;
-      border-radius: 16px;
+      border-radius: 14px;
       display: block;
     }
     .hero-photo-caption {
@@ -519,47 +522,44 @@
 
 <!-- NLP CHATBOT -->
 <div class="modal-overlay" id="modal-chatbot" onclick="closeOnOverlay(event,'modal-chatbot')">
-  <div class="modal-split">
-    <div class="modal-left"><img src="artifact-6-nlp.png" alt="NLP Chatbot"/></div>
-    <div class="modal-right">
-      <div class="modal-header">
-        <div><div class="modal-tag">Enterprise · Retail AI · NLP</div><div class="modal-title">NLP Chatbot — Retail E-Commerce Platform</div></div>
-        <button class="modal-close" onclick="closeModal('modal-chatbot')">✕</button>
-      </div>
-      <div class="modal-tabs">
-        <button class="tab-btn active" onclick="switchTab('chatbot','overview',this)">Overview</button>
-        <button class="tab-btn" onclick="switchTab('chatbot','work',this)">Full Work</button>
-      </div>
-      <div class="modal-body">
-        <div class="tab-panel active" id="chatbot-overview">
-          <div class="modal-metrics">
-            <div class="modal-metric"><div class="modal-metric-num">25%</div><div class="modal-metric-label">Support Volume Reduced</div></div>
-            <div class="modal-metric"><div class="modal-metric-num">30%</div><div class="modal-metric-label">Forecast Accuracy Improved</div></div>
-            <div class="modal-metric"><div class="modal-metric-num">24/7</div><div class="modal-metric-label">Customer Engagement</div></div>
-            <div class="modal-metric"><div class="modal-metric-num">100%</div><div class="modal-metric-label">Real-time Data Exchange</div></div>
-          </div>
-          <img src="infographic-nlp.png" alt="NLP Chatbot Infographic" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:1.6rem;"/>
-          <div style="background:rgba(42,171,171,0.08);border:1px solid rgba(42,171,171,0.2);border-radius:8px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:1rem;color:var(--white);font-weight:300;">Business Value — 25% reduction in support volume and 30% forecast accuracy improvement within one quarter of launch, enabling staff to focus on complex customer needs.</div>
-          <h3>Project Overview</h3>
-          <p>Architected and deployed an AI-powered NLP chatbot on a major retail e-commerce platform, handling customer inquiries, product recommendations, order tracking, and support escalation — fully integrated with backend systems for real-time data exchange at scale.</p>
-          <h3>The Problem</h3>
-          <p>The customer support team was overwhelmed by repetitive low-complexity inquiries. Staff were spending the majority of their capacity on order status questions, product availability, store hours, and basic troubleshooting — leaving insufficient time for complex customer needs. Response times were slow and satisfaction scores were declining.</p>
-          <h3>The Solution</h3>
-          <p>Designed end-to-end chatbot dialogue flows covering the full customer journey. Built a comprehensive intent library for every common interaction pattern. Integrated the chatbot directly with the e-commerce backend for real-time inventory, order, and account data access — enabling 24/7 availability and instant responses across all customer touchpoints.</p>
-          <h3>Delivery & KPIs</h3>
-          <p>Partnered with product owners to define a multi-quarter delivery roadmap. Tracked sprint velocity, defect rate, and release predictability — establishing a performance baseline that improved forecast accuracy by 30%. Support volume reduced by 25% within the first quarter post-launch.</p>
-          <h3>Tools & Technologies</h3>
-          <p>NLP Platform · Chatbot Architecture · Dialogue Flow Design · Backend API Integration · Agile Delivery · JIRA · KPI Design · E-Commerce Systems</p>
+  <div class="modal">
+    <div class="modal-header">
+      <div><div class="modal-tag">Enterprise · Retail AI · NLP</div><div class="modal-title">NLP Chatbot — Retail E-Commerce Platform</div></div>
+      <button class="modal-close" onclick="closeModal('modal-chatbot')">✕</button>
+    </div>
+    <div class="modal-tabs">
+      <button class="tab-btn active" onclick="switchTab('chatbot','overview',this)">Overview</button>
+      <button class="tab-btn" onclick="switchTab('chatbot','work',this)">Full Work</button>
+    </div>
+    <div class="modal-body">
+      <div class="tab-panel active" id="chatbot-overview">
+        <img src="infographic-nlp.png" alt="NLP Chatbot Infographic" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:1.6rem;"/>
+        <div style="background:rgba(42,171,171,0.08);border:1px solid rgba(42,171,171,0.2);border-radius:8px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:1rem;color:var(--white);font-weight:300;">Business Value — 25% reduction in support volume and 30% forecast accuracy improvement within one quarter of launch, enabling staff to focus on complex customer needs.</div>
+        <div class="modal-metrics">
+          <div class="modal-metric"><div class="modal-metric-num">25%</div><div class="modal-metric-label">Support Volume Reduced</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">30%</div><div class="modal-metric-label">Forecast Accuracy Improved</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">24/7</div><div class="modal-metric-label">Customer Engagement</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">100%</div><div class="modal-metric-label">Real-time Data Exchange</div></div>
         </div>
-        <div class="tab-panel" id="chatbot-work">
-          <h3>Presentation Slides</h3>
-          <div class="slide-viewer">
-            <div class="slide-img-display"><img id="nlp-img" src="nlp-slide-01.png" alt="Slide"/></div>
-            <div class="slide-nav">
-              <button class="slide-arrow" id="nlp-prev" onclick="changeSlide('nlp',slideState.nlp,-1)" disabled>←</button>
-              <span class="slide-counter-text" id="nlp-counter">1 / 10</span>
-              <button class="slide-arrow" id="nlp-next" onclick="changeSlide('nlp',slideState.nlp,1)">→</button>
-            </div>
+        <h3>Project Overview</h3>
+        <p>Architected and deployed an AI-powered NLP chatbot on a major retail e-commerce platform, handling customer inquiries, product recommendations, order tracking, and support escalation — fully integrated with backend systems for real-time data exchange at scale.</p>
+        <h3>The Problem</h3>
+        <p>The customer support team was overwhelmed by repetitive low-complexity inquiries. Staff were spending the majority of their capacity on order status questions, product availability, store hours, and basic troubleshooting — leaving insufficient time for complex customer needs. Response times were slow and satisfaction scores were declining.</p>
+        <h3>The Solution</h3>
+        <p>Designed end-to-end chatbot dialogue flows covering the full customer journey. Built a comprehensive intent library for every common interaction pattern and integrated the chatbot directly with the e-commerce backend for real-time inventory, order, and account data access — enabling 24/7 availability and instant responses across all customer touchpoints.</p>
+        <h3>Delivery & KPIs</h3>
+        <p>Partnered with product owners to define a multi-quarter delivery roadmap. Tracked sprint velocity, defect rate, and release predictability — improving forecast accuracy by 30%. Support volume reduced by 25% within the first quarter post-launch.</p>
+        <h3>Tools & Technologies</h3>
+        <p>NLP Platform · Chatbot Architecture · Dialogue Flow Design · Backend API Integration · Agile Delivery · JIRA · KPI Design · E-Commerce Systems</p>
+      </div>
+      <div class="tab-panel" id="chatbot-work">
+        <h3>Presentation Slides</h3>
+        <div class="slide-viewer">
+          <div class="slide-img-display"><img id="nlp-img" src="nlp-slide-01.png" alt="Slide"/></div>
+          <div class="slide-nav">
+            <button class="slide-arrow" id="nlp-prev" onclick="changeSlide('nlp',slideState.nlp,-1)" disabled>←</button>
+            <span class="slide-counter-text" id="nlp-counter">1 / 10</span>
+            <button class="slide-arrow" id="nlp-next" onclick="changeSlide('nlp',slideState.nlp,1)">→</button>
           </div>
         </div>
       </div>
@@ -652,21 +652,21 @@
     <div class="modal-body">
       <div class="tab-panel active" id="watson-overview">
         <img src="infographic-watson.png" alt="IBM Watson Infographic" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:1.6rem;"/>
+        <div style="background:rgba(42,171,171,0.08);border:1px solid rgba(42,171,171,0.2);border-radius:8px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:1rem;color:var(--white);font-weight:300;">Business Value — 40% reduction in administrative effort across a large healthcare network, freeing clinical staff capacity for complex patient care while achieving full HIPAA compliance.</div>
         <div class="modal-metrics">
           <div class="modal-metric"><div class="modal-metric-num">40%</div><div class="modal-metric-label">Admin Effort Reduced</div></div>
           <div class="modal-metric"><div class="modal-metric-num">60+</div><div class="modal-metric-label">Intents Designed</div></div>
           <div class="modal-metric"><div class="modal-metric-num">120+</div><div class="modal-metric-label">Entities Configured</div></div>
           <div class="modal-metric"><div class="modal-metric-num">100+</div><div class="modal-metric-label">UAT Cases Executed</div></div>
         </div>
-        <div style="background:rgba(42,171,171,0.08);border:1px solid rgba(42,171,171,0.2);border-radius:8px;padding:1rem 1.2rem;margin-bottom:1.4rem;font-size:1rem;color:var(--white);font-weight:300;">Business Value — 40% reduction in administrative effort across a large healthcare network, freeing clinical staff capacity for complex patient care while achieving full HIPAA compliance.</div>
         <h3>Project Overview</h3>
         <p>Led end-to-end business analysis and solution architecture for an IBM Watson-powered AI virtual assistant deployed across a large US healthcare network. The assistant handled symptom triage, appointment scheduling, medication inquiries, and billing navigation — replacing manual administrative workflows at scale.</p>
         <h3>The Problem</h3>
-        <p>A large healthcare network was overwhelmed with repetitive administrative queries routed to human staff. Staff were spending the majority of their time on low-complexity interactions that could be automated, leaving insufficient capacity for complex patient needs. High-volume, manual routing of administrative tasks led to a healthcare network that was consistently overwhelmed.</p>
+        <p>A large healthcare network was overwhelmed with repetitive administrative queries routed to human staff. Staff were spending the majority of their time on low-complexity interactions that could be automated, leaving insufficient capacity for complex patient needs.</p>
         <h3>The Solution</h3>
-        <p>Architected a HIPAA-compliant IBM Watson Assistant with a dynamic knowledge base capable of resolving clinical queries in real time. Designed 60+ intents and 120+ entities with complex multi-turn dialog flows that handled edge cases and escalation paths gracefully. Engineered EHR data integration workflows including ANSI X12/EDI compliance and data matching algorithms for seamless synchronization across multiple healthcare platforms.</p>
+        <p>Architected a HIPAA-compliant IBM Watson Assistant with a dynamic knowledge base capable of resolving clinical queries in real time. Designed 60+ intents and 120+ entities with complex multi-turn dialog flows that handled edge cases and escalation paths gracefully. Engineered EHR data integration workflows including ANSI X12/EDI compliance and data matching algorithms.</p>
         <h3>Validation</h3>
-        <p>Conducted 25+ stakeholder interviews with clinicians and compliance officers. Developed and executed 100+ UAT test cases validating AI outputs against clinical accuracy benchmarks and HIPAA standards. Administrative effort reduced by 40%.</p>
+        <p>Conducted 25+ stakeholder interviews with clinicians and compliance officers. Developed and executed 100+ UAT test cases validating AI outputs against clinical accuracy benchmarks and HIPAA standards.</p>
         <h3>Tools & Technologies</h3>
         <p>IBM Watson Assistant · HIPAA Compliance · EHR Systems · ANSI X12/EDI · Dialog Flow Design · UAT Methodology · Agile Delivery · JIRA</p>
       </div>
