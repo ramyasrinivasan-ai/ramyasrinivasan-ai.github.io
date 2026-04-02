@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ramya Srinivasan | AI Solutions Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black:  #080808;
+      --black2: #0f0f0f;
+      --black3: #161616;
+      --teal:   #2aabab;
+      --white:  #f0f0f0;
+      --muted:  #888;
+      --border: rgba(255,255,255,0.07);
+    }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif; background:var(--black); color:var(--white); overflow-x:hidden; font-size:16px; line-height:1.7; }
+    ::-webkit-scrollbar { width:3px; }
+    ::-webkit-scrollbar-thumb { background:#222; }
+
+    /* NAV */
+    nav { position:fixed; top:0; left:0; right:0; z-index:500; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 6%; background:rgba(8,8,8,0.96); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); }
+    .nav-logo { font-family:'Inter',sans-serif; font-weight:300; font-size:0.85rem; color:var(--white); text-decoration:none; letter-spacing:0.22em; text-transform:uppercase; }
+    .nav-links { display:flex; gap:2.5rem; list-style:none; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:0.78rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-cta { background:var(--white); color:var(--black); padding:0.55rem 1.4rem; border-radius:4px; font-weight:500; font-size:0.78rem; text-decoration:none; letter-spacing:0.04em; transition:opacity 0.2s; }
+    .nav-cta:hover { opacity:0.85; }
+
+    /* HERO */
+    #home { min-height:100vh; display:flex; align-items:center; padding:10rem 6% 6rem; border-bottom:1px solid var(--border); }
+    .hero-tag { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--border); border-radius:100px; padding:0.3rem 1rem; font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2.5rem; animation:fadeUp 0.6s ease both; }
+    .hero-tag span { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    h1 { font-family:'Inter',sans-serif; font-size:clamp(2.8rem,5.5vw,5.2rem); font-weight:200; line-height:1.1; letter-spacing:-0.01em; animation:fadeUp 0.6s 0.1s ease both; }
+    h1 em { color:var(--teal); font-style:normal; }
+    .hero-sub { margin-top:2rem; font-size:1.1rem; font-weight:300; color:var(--muted); line-height:1.8; max-width:560px; animation:fadeUp 0.6s 0.2s ease both; }
+    .hero-btns { display:flex; gap:1rem; margin-top:2.8rem; animation:fadeUp 0.6s 0.3s ease both; }
+    .btn-p { background:var(--white); color:var(--black); padding:0.85rem 2rem; border-radius:4px; font-weight:500; font-size:0.9rem; text-decoration:none; transition:opacity 0.2s; }
+    .btn-p:hover { opacity:0.85; }
+    .btn-o { border:1px solid var(--border); color:var(--white); padding:0.85rem 2rem; border-radius:4px; font-size:0.9rem; text-decoration:none; transition:border-color 0.2s; }
+    .btn-o:hover { border-color:rgba(255,255,255,0.3); }
+    .metrics { display:flex; flex-wrap:wrap; margin-top:5rem; padding-top:3rem; border-top:1px solid var(--border); animation:fadeUp 0.6s 0.4s ease both; }
+    .metric { flex:1; min-width:130px; padding-right:3rem; }
+    .metric-num { font-family:'Inter',sans-serif; font-size:3.2rem; font-weight:200; line-height:1; }
+    .metric-num em { color:var(--teal); font-style:normal; }
+    .metric-label { font-size:0.8rem; font-weight:300; color:var(--muted); margin-top:0.5rem; line-height:1.5; max-width:120px; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+    /* SECTIONS */
+    section { padding:6rem 6%; border-bottom:1px solid var(--border); }
+    .sec-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); margin-bottom:0.8rem; font-weight:400; }
+    .sec-title { font-family:'Inter',sans-serif; font-size:clamp(1.9rem,3.5vw,2.8rem); font-weight:300; line-height:1.1; margin-bottom:3.5rem; letter-spacing:-0.01em; }
+    .sec-title em { color:var(--teal); font-style:normal; }
+
+    /* ABOUT */
+    #about { background:var(--black2); }
+    .about-grid { display:grid; grid-template-columns:1.2fr 0.8fr; gap:5rem; }
+    .about-text p { color:var(--muted); line-height:1.9; font-size:1rem; margin-bottom:1.2rem; font-weight:300; }
+    .pills { display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:1.8rem; }
+    .pill { border:1px solid var(--border); border-radius:3px; padding:0.3rem 0.85rem; font-size:0.78rem; color:var(--muted); font-weight:300; }
+    .cert-list { display:flex; flex-direction:column; gap:0.65rem; }
+    .cert { background:var(--black3); border:1px solid var(--border); border-radius:8px; padding:1rem 1.2rem; display:flex; align-items:center; gap:0.9rem; transition:border-color 0.2s,transform 0.2s; }
+    .cert:hover { border-color:rgba(255,255,255,0.16); transform:translateX(3px); }
+    .cert-ic { font-size:1rem; flex-shrink:0; }
+    .cert-name { font-size:0.88rem; font-weight:400; color:var(--white); }
+    .cert-st { font-size:0.74rem; color:var(--muted); margin-top:0.12rem; font-weight:300; }
+    .cert-st.ok { color:var(--teal); }
+
+    /* EXPERIENCE */
+    #experience { background:var(--black); }
+    .timeline { padding-left:1.5rem; position:relative; }
+    .timeline::before { content:''; position:absolute; left:0; top:8px; bottom:0; width:1px; background:var(--border); }
+    .tl-item { position:relative; margin-bottom:3rem; padding-left:1.5rem; }
+    .tl-item::before { content:''; position:absolute; left:-1.87rem; top:8px; width:8px; height:8px; border-radius:50%; background:var(--teal); }
+    .tl-head { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.3rem; }
+    .tl-role { font-family:'Inter',sans-serif; font-size:1rem; font-weight:500; color:var(--white); }
+    .tl-period { font-size:0.74rem; color:var(--muted); border:1px solid var(--border); border-radius:100px; padding:0.2rem 0.75rem; font-weight:300; }
+    .tl-co { font-size:0.85rem; color:var(--muted); margin-bottom:0.9rem; font-weight:300; }
+    .tl-ul { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
+    .tl-ul li { font-size:0.92rem; color:var(--muted); line-height:1.75; padding-left:1rem; position:relative; font-weight:300; }
+    .tl-ul li::before { content:'—'; position:absolute; left:0; color:#2a2a2a; }
+
+    /* PROJECTS */
+    #projects { background:var(--black2); }
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    .proj-card { background:var(--black3); border:1px solid var(--border); border-radius:12px; overflow:hidden; cursor:pointer; transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column; }
+    .proj-card:hover { border-color:rgba(255,255,255,0.2); transform:translateY(-6px); box-shadow:0 24px 60px rgba(0,0,0,0.5); }
+    .proj-img-wrap { position:relative; overflow:hidden; aspect-ratio:2/3; }
+    .proj-img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform 0.5s ease; }
+    .proj-card:hover .proj-img { transform:scale(1.05); }
+    .proj-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.55); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
+    .proj-card:hover .proj-overlay { opacity:1; }
+    .proj-overlay-btn { background:var(--white); color:var(--black); padding:0.65rem 1.5rem; border-radius:4px; font-weight:500; font-size:0.85rem; transform:translateY(8px); transition:transform 0.3s; }
+    .proj-card:hover .proj-overlay-btn { transform:translateY(0); }
+    .proj-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
+    .proj-tag { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; font-weight:400; }
+    .proj-title { font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:500; color:var(--white); line-height:1.3; margin-bottom:0.6rem; }
+    .proj-desc { font-size:0.85rem; color:var(--muted); line-height:1.7; flex:1; font-weight:300; }
+    .proj-chips { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:1rem; }
+    .chip { font-size:0.68rem; padding:0.2rem 0.6rem; border-radius:3px; border:1px solid var(--border); color:var(--muted); font-weight:300; }
+
+    /* MODAL — SHELBY STYLE: image left, content right */
+    .modal-overlay { display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.92); backdrop-filter:blur(12px); align-items:center; justify-content:center; padding:1rem; }
+    .modal-overlay.open { display:flex; }
+    .modal { background:var(--black3); border:1px solid rgba(255,255,255,0.1); border-radius:16px; width:100%; max-width:1280px; height:94vh; display:grid; grid-template-columns:420px 1fr; overflow:hidden; }
+    .modal-left { border-right:1px solid var(--border); overflow-y:auto; background:var(--black); }
+    .modal-left::-webkit-scrollbar { width:2px; }
+    .modal-left::-webkit-scrollbar-thumb { background:#222; }
+    .modal-left img { width:100%; height:auto; display:block; }
+    .modal-right { display:flex; flex-direction:column; overflow:hidden; min-height:0; }
+    .modal-header { display:flex; align-items:flex-start; justify-content:space-between; padding:1.6rem 1.8rem 1rem; flex-shrink:0; border-bottom:1px solid var(--border); }
+    .modal-title { font-family:'Inter',sans-serif; font-size:1.15rem; font-weight:400; line-height:1.3; padding-right:1rem; }
+    .modal-tag { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); margin-bottom:0.4rem; font-weight:400; }
+    .modal-close { background:none; border:none; color:var(--muted); font-size:1.4rem; cursor:pointer; padding:0.2rem 0.4rem; transition:color 0.2s; flex-shrink:0; line-height:1; }
+    .modal-close:hover { color:var(--white); }
+    .modal-body { flex:1; overflow-y:auto; padding:1.8rem; min-height:0; }
+    .modal-body::-webkit-scrollbar { width:3px; }
+    .modal-body::-webkit-scrollbar-thumb { background:#2a2a2a; }
+    .modal-body p { font-size:0.95rem; color:var(--muted); line-height:1.85; margin-bottom:1rem; font-weight:300; }
+    .modal-body h3 { font-family:'Inter',sans-serif; font-size:0.75rem; font-weight:500; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin:1.6rem 0 0.6rem; }
+    .modal-body h3:first-child { margin-top:0; }
+    .modal-metrics { display:grid; grid-template-columns:repeat(2,1fr); gap:0.8rem; margin-bottom:1.6rem; }
+    .modal-metric { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:1.1rem; text-align:center; }
+    .modal-metric-num { font-family:'Inter',sans-serif; font-size:2rem; font-weight:200; color:var(--teal); }
+    .modal-metric-label { font-size:0.74rem; color:var(--muted); margin-top:0.3rem; font-weight:300; }
+    .pdf-embed { width:100%; height:580px; border:none; border-radius:8px; background:#111; margin-top:0.5rem; }
+    .slide-viewer { display:flex; flex-direction:column; gap:1rem; }
+    .slide-img-display img { width:100%; display:block; border-radius:8px; }
+    .slide-nav { display:flex; align-items:center; gap:0.8rem; padding:0.5rem 0; }
+    .slide-arrow { background:rgba(255,255,255,0.05); border:1px solid var(--border); color:var(--white); width:38px; height:38px; border-radius:50%; cursor:pointer; font-size:0.9rem; transition:background 0.2s; display:flex; align-items:center; justify-content:center; }
+    .slide-arrow:hover { background:rgba(255,255,255,0.12); }
+    .slide-arrow:disabled { opacity:0.3; cursor:not-allowed; }
+    .slide-counter-text { font-size:0.8rem; color:var(--muted); font-weight:300; }
+
+    /* Infographic display */
+    .infographic-wrap { margin-bottom:1.5rem; }
+    .infographic-wrap img { width:100%; border-radius:8px; display:block; }
+
+    /* EDUCATION */
+    #education { background:var(--black); }
+    .edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    .edu-card { background:var(--black3); border:1px solid var(--border); border-radius:10px; padding:2rem; transition:border-color 0.2s; }
+    .edu-card:hover { border-color:rgba(255,255,255,0.14); }
+    .edu-deg { font-family:'Inter',sans-serif; font-size:1rem; font-weight:400; margin-bottom:0.4rem; line-height:1.3; }
+    .edu-school { font-size:0.82rem; color:var(--teal); margin-bottom:0.3rem; font-weight:300; }
+    .edu-det { font-size:0.82rem; color:var(--muted); line-height:1.65; font-weight:300; }
+
+    /* SKILLS */
+    #skills { background:var(--black2); }
+    .skills-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+    .sk-cat { background:var(--black3); border:1px solid var(--border); border-radius:10px; padding:1.5rem; }
+    .sk-title { font-size:0.72rem; font-weight:500; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
+    .sk-list { display:flex; flex-direction:column; gap:0.55rem; }
+    .sk-item { font-size:0.85rem; color:var(--muted); padding-left:0.8rem; position:relative; font-weight:300; }
+    .sk-item::before { content:'·'; position:absolute; left:0; color:var(--teal); }
+
+    /* CONTACT */
+    #contact { background:var(--black); text-align:center; }
+    .contact-inner { max-width:480px; margin:0 auto; }
+    .contact-inner p { color:var(--muted); font-size:1rem; line-height:1.85; margin-bottom:2.5rem; font-weight:300; }
+    .clinks { display:flex; justify-content:center; gap:0.8rem; flex-wrap:wrap; }
+    .clink { display:flex; align-items:center; gap:0.5rem; background:var(--black3); border:1px solid var(--border); border-radius:6px; padding:0.78rem 1.4rem; color:var(--white); text-decoration:none; font-size:0.88rem; font-weight:300; transition:border-color 0.2s,transform 0.2s; }
+    .clink:hover { border-color:rgba(255,255,255,0.22); transform:translateY(-2px); }
+
+    footer { text-align:center; padding:2rem 6%; font-size:0.74rem; color:#2a2a2a; font-weight:300; }
+
+    @media(max-width:1024px) { .projects-grid { grid-template-columns:repeat(2,1fr); } .skills-grid { grid-template-columns:repeat(2,1fr); } .modal { grid-template-columns:1fr; height:95vh; } .modal-left { max-height:300px; overflow:hidden; } }
+    @media(max-width:768px) { .about-grid,.edu-grid { grid-template-columns:1fr; } .projects-grid { grid-template-columns:1fr; } .nav-links { display:none; } h1 { font-size:2.4rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#home" class="nav-logo">Ramya Srinivasan</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="Srinivasan_Ramya_Resume.pdf" class="nav-cta" download>Resume ↓</a>
+</nav>
+
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-tag"><span></span> Open to Senior AI &amp; Solutions Architect Roles</div>
+    <h1>Turning Complex Data<br>into <em>Intelligent</em><br>Solutions.</h1>
+    <p class="hero-sub">AI Solutions Architect with 10+ years delivering enterprise AI/ML systems across Healthcare and Retail. MS in Artificial Intelligence candidate at Indiana Wesleyan University. AZ-900 Certified.</p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-p">View Projects</a>
+      <a href="#contact" class="btn-o">Get in Touch</a>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-num">10<em>+</em></div><div class="metric-label">Years Enterprise AI Experience</div></div>
+      <div class="metric"><div class="metric-num">40<em>%</em></div><div class="metric-label">Admin Effort Cut via IBM Watson</div></div>
+      <div class="metric"><div class="metric-num">25<em>%</em></div><div class="metric-label">Support Volume Cut via NLP Chatbot</div></div>
+      <div class="metric"><div class="metric-num">100<em>+</em></div><div class="metric-label">UAT Cases for Clinical AI Validation</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="sec-label">About</div>
+  <h2 class="sec-title">Engineering Background.<br><em>AI-Forward Thinking.</em></h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>My professional foundation is rooted in enterprise technology, where I have spent over a decade working at the intersection of business needs and intelligent systems. I bring a grounded and practical perspective to AI — not only as a technical discipline, but as a field where design choices affect real people, real decisions, and real outcomes.</p>
+      <p>With a background in Electronics and Communication Engineering and hands-on experience deploying IBM Watson AI in healthcare and NLP chatbots in retail, I connect technical architecture to measurable business impact.</p>
+      <p>Currently pursuing my MS in Artificial Intelligence at Indiana Wesleyan University with a concentration in Data Analytics, deepening expertise in machine learning, neural networks, and responsible AI system design.</p>
+      <div class="pills">
+        <span class="pill">AI Solution Design</span><span class="pill">Azure Cloud</span><span class="pill">NLP & Chatbots</span><span class="pill">Python</span><span class="pill">Agile & SAFe</span><span class="pill">Power BI</span><span class="pill">HIPAA Compliance</span><span class="pill">Data Analytics</span>
+      </div>
+      <div class="infographic-wrap" style="margin-top:2rem;">
+        <img src="infographic-bio.png" alt="Professional Journey Infographic"/>
+      </div>
+    </div>
+    <div class="cert-list">
+      <div class="cert"><div class="cert-ic">☁️</div><div><div class="cert-name">Microsoft Azure Fundamentals</div><div class="cert-st ok">✓ AZ-900 Certified — 2025</div></div></div>
+      <div class="cert"><div class="cert-ic">🔧</div><div><div class="cert-name">Azure Administrator (AZ-104)</div><div class="cert-st">In Progress — Target 2026</div></div></div>
+      <div class="cert"><div class="cert-ic">🏗️</div><div><div class="cert-name">Azure Solutions Architect Expert (AZ-305)</div><div class="cert-st">In Progress — Target 2026</div></div></div>
+      <div class="cert"><div class="cert-ic">⚡</div><div><div class="cert-name">SAFe Certified Advanced Scrum Master</div><div class="cert-st ok">✓ Active</div></div></div>
+      <div class="cert"><div class="cert-ic">📊</div><div><div class="cert-name">Certified Business Analyst</div><div class="cert-st ok">✓ Active — Precision Technologies</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="sec-label">Career</div>
+  <h2 class="sec-title">Professional <em>Experience</em></h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-head"><div class="tl-role">Senior AI Business Analyst & Solution Designer</div><div class="tl-period">Sep 2019 – Present</div></div>
+      <div class="tl-co">Gardner-White Furniture · Auburn Hills, MI · Retail E-Commerce</div>
+      <ul class="tl-ul">
+        <li>Architected and deployed an AI-powered NLP chatbot, reducing customer support volume by 25% and enabling 24/7 personalized engagement at scale.</li>
+        <li>Designed end-to-end chatbot dialogue flows integrated with backend platforms for real-time data exchange.</li>
+        <li>Partnered with product owners to define a multi-quarter roadmap, improving forecast accuracy by 30% through defined KPI tracking.</li>
+        <li>Conducted gap analysis and SWOT assessments, translating findings into investment proposals for senior leadership.</li>
+      </ul>
+    </div>
+    <div class="tl-item">
+      <div class="tl-head"><div class="tl-role">Business Analyst — AI & Healthcare Systems</div><div class="tl-period">Mar 2017 – Aug 2019</div></div>
+      <div class="tl-co">Streamline Health Care · Michigan · US Healthcare / HIT</div>
+      <ul class="tl-ul">
+        <li>Led end-to-end business analysis for an IBM Watson-powered AI virtual assistant spanning symptom triage, scheduling, and billing navigation across a large healthcare network.</li>
+        <li>Reduced human administrative effort by 40% by architecting HIPAA-compliant dynamic search and AI knowledge base configuration.</li>
+        <li>Designed 60+ intents, 120+ entities and complex medical dialog flows tailored to HIPAA compliance.</li>
+        <li>Developed and executed 100+ UAT test cases validating AI outputs against clinical accuracy benchmarks.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="sec-label">Portfolio</div>
+  <h2 class="sec-title">Featured <em>Projects</em></h2>
+  <div class="projects-grid">
+
+    <div class="proj-card" onclick="openModal('modal-odyssey')">
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-1-timeline.png" alt="AI Odyssey"/><div class="proj-overlay"><span class="proj-overlay-btn">View Project</span></div></div>
+      <div class="proj-body">
+        <div class="proj-tag">Academic · AI/ML · Visual Design</div>
+        <div class="proj-title">The AI Odyssey: Visual Timeline (1950–2025)</div>
+        <div class="proj-desc">A visual infographic timeline tracing AI evolution from early symbolic systems to modern generative AI. Designed in Figma with color-coded eras and visual hierarchy.</div>
+        <div class="proj-chips"><span class="chip">Figma</span><span class="chip">NotebookLM</span><span class="chip">AI History</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('modal-chatbot')">
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-2-chatbot.png" alt="NLP Chatbot"/><div class="proj-overlay"><span class="proj-overlay-btn">View Details</span></div></div>
+      <div class="proj-body">
+        <div class="proj-tag">Enterprise · Retail AI · NLP</div>
+        <div class="proj-title">NLP Chatbot — Retail E-Commerce Platform</div>
+        <div class="proj-desc">Architected and deployed an AI-powered NLP chatbot reducing customer support volume by 25% and enabling 24/7 personalized engagement at scale for a major retail brand.</div>
+        <div class="proj-chips"><span class="chip">NLP</span><span class="chip">Chatbot Architecture</span><span class="chip">API Integration</span><span class="chip">KPIs</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('modal-mldl')">
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-3-mldl.png" alt="ML vs DL"/><div class="proj-overlay"><span class="proj-overlay-btn">View Project</span></div></div>
+      <div class="proj-body">
+        <div class="proj-tag">Academic · Machine Learning · Research</div>
+        <div class="proj-title">ML vs Deep Learning: Automotive Case Study</div>
+        <div class="proj-desc">Comparative analysis through two real-world automotive applications — GM OnStar churn prediction using ML and Waymo autonomous driving using deep learning.</div>
+        <div class="proj-chips"><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Automotive AI</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('modal-leadership')">
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-4-leadership.png" alt="Leadership & AI"/><div class="proj-overlay"><span class="proj-overlay-btn">View Slides</span></div></div>
+      <div class="proj-body">
+        <div class="proj-tag">Academic · AI Ethics · Leadership</div>
+        <div class="proj-title">Architecting Fair Automotive AI</div>
+        <div class="proj-desc">Research presentation exploring bias, fairness, and ethical AI design in automotive systems with actionable leadership frameworks for practitioners.</div>
+        <div class="proj-chips"><span class="chip">AI Ethics</span><span class="chip">Cognitive Bias</span><span class="chip">Explainable AI</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('modal-watson')">
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-5-watson.png" alt="IBM Watson"/><div class="proj-overlay"><span class="proj-overlay-btn">View Details</span></div></div>
+      <div class="proj-body">
+        <div class="proj-tag">Enterprise · Healthcare AI · IBM Watson</div>
+        <div class="proj-title">IBM Watson Healthcare AI Assistant</div>
+        <div class="proj-desc">Led architecture for an IBM Watson virtual assistant across a large US healthcare network. Reduced administrative effort by 40% with HIPAA-compliant clinical AI.</div>
+        <div class="proj-chips"><span class="chip">IBM Watson</span><span class="chip">HIPAA</span><span class="chip">NLP</span><span class="chip">EHR</span></div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('modal-netflix')">
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-6-netflix.png" alt="Netflix Analytics" onerror="this.src='artifact-6-nlp.png'"/><div class="proj-overlay"><span class="proj-overlay-btn">View Project</span></div></div>
+      <div class="proj-body">
+        <div class="proj-tag">Academic · Data Analytics · Python</div>
+        <div class="proj-title">Netflix Data Analytics — The $1B Content Strategy</div>
+        <div class="proj-desc">Analyzed 8,807 Netflix titles using Excel and Python. Uncovered content trends, genre distributions, and the personalization strategy saving Netflix $1 billion annually.</div>
+        <div class="proj-chips"><span class="chip">Python</span><span class="chip">Excel</span><span class="chip">Data Fusion</span><span class="chip">Power BI</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="education">
+  <div class="sec-label">Academic Background</div>
+  <h2 class="sec-title">Education &amp; <em>Learning</em></h2>
+  <div class="edu-grid">
+    <div class="edu-card">
+      <div class="edu-deg">Master of Science — Artificial Intelligence & Machine Learning</div>
+      <div class="edu-school">Indiana Wesleyan University · In Progress, 2026</div>
+      <div class="edu-det">Concentration: Data Analytics · Coursework: ML Fundamentals, Data Analytics, Neural Networks, AI Platform Design, Big Data</div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-deg">Bachelor of Engineering — Electronics & Communication</div>
+      <div class="edu-school">Thanthai Periyar Government Institute of Technology, India</div>
+      <div class="edu-det">First Class with Honors</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="sec-label">Capabilities</div>
+  <h2 class="sec-title">Technical <em>Skills</em></h2>
+  <div class="skills-grid">
+    <div class="sk-cat"><div class="sk-title">AI / ML</div><div class="sk-list"><div class="sk-item">IBM Watson</div><div class="sk-item">NLP & Conversational AI</div><div class="sk-item">Chatbot Architecture</div><div class="sk-item">ML Pipeline Design</div><div class="sk-item">Neural Networks</div><div class="sk-item">Python</div></div></div>
+    <div class="sk-cat"><div class="sk-title">Cloud</div><div class="sk-list"><div class="sk-item">Microsoft Azure (AZ-900)</div><div class="sk-item">Azure AI Services</div><div class="sk-item">Entra ID / Active Directory</div><div class="sk-item">Cloud Architecture</div><div class="sk-item">AZ-104 In Progress</div><div class="sk-item">AZ-305 In Progress</div></div></div>
+    <div class="sk-cat"><div class="sk-title">Data & BI</div><div class="sk-list"><div class="sk-item">Python & SQL</div><div class="sk-item">Power BI</div><div class="sk-item">Data Validation & ETL</div><div class="sk-item">EHR Systems</div><div class="sk-item">ANSI X12 / EDI</div><div class="sk-item">Data Fusion</div></div></div>
+    <div class="sk-cat"><div class="sk-title">Delivery</div><div class="sk-list"><div class="sk-item">Agile Leadership & SAFe</div><div class="sk-item">JIRA Administration</div><div class="sk-item">Solution Design & BRD</div><div class="sk-item">Gap & SWOT Analysis</div><div class="sk-item">Lucidchart & Visio</div><div class="sk-item">Stakeholder Engagement</div></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-label">Connect</div>
+  <h2 class="sec-title">Get in <em>Touch</em></h2>
+  <div class="contact-inner">
+    <p>Open to senior AI Solutions Architect and AI Platform leadership opportunities. Reach out for collaboration, consulting, or professional networking.</p>
+    <div class="clinks">
+      <a href="mailto:ramyamunthi@gmail.com" class="clink">📧 Email</a>
+      <a href="https://linkedin.com/in/ramyasvasan" class="clink" target="_blank">💼 LinkedIn</a>
+      <a href="https://sites.google.com/view/ramya-srinivasan-portfolio" class="clink" target="_blank">🎓 Academic Portfolio</a>
+      <a href="Srinivasan_Ramya_Resume.pdf" class="clink" download>📄 Resume</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Ramya Srinivasan · AI Solutions Architect · ramyasrinivasan-ai.github.io</footer>
+
+<!-- ═══ MODALS ═══ -->
+
+<!-- AI ODYSSEY -->
+<div class="modal-overlay" id="modal-odyssey" onclick="closeOnOverlay(event,'modal-odyssey')">
+  <div class="modal">
+    <div class="modal-left"><img src="artifact-1-timeline.png" alt="AI Odyssey"/></div>
+    <div class="modal-right">
+      <div class="modal-header">
+        <div><div class="modal-tag">Academic · AI/ML · Visual Design</div><div class="modal-title">The AI Odyssey: Visual Timeline (1950–2025)</div></div>
+        <button class="modal-close" onclick="closeModal('modal-odyssey')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="infographic-wrap"><img src="infographic-odyssey.png" alt="AI Odyssey Infographic"/></div>
+        <h3>Overview</h3>
+        <p>A visual infographic timeline exploring the full evolution of artificial intelligence — from Alan Turing's foundational test in 1950 to the age of agentic AI in 2025. Designed in Figma using color-coded eras, icons, and careful visual hierarchy.</p>
+        <h3>Full Research Document</h3>
+        <iframe class="pdf-embed" src="ai-odyssey.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NLP RETAIL CHATBOT -->
+<div class="modal-overlay" id="modal-chatbot" onclick="closeOnOverlay(event,'modal-chatbot')">
+  <div class="modal">
+    <div class="modal-left"><img src="artifact-2-chatbot.png" alt="NLP Chatbot"/></div>
+    <div class="modal-right">
+      <div class="modal-header">
+        <div><div class="modal-tag">Enterprise · Retail AI · NLP</div><div class="modal-title">NLP Chatbot — Retail E-Commerce Platform</div></div>
+        <button class="modal-close" onclick="closeModal('modal-chatbot')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-metrics">
+          <div class="modal-metric"><div class="modal-metric-num">25%</div><div class="modal-metric-label">Support Volume Reduced</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">30%</div><div class="modal-metric-label">Forecast Accuracy Improved</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">24/7</div><div class="modal-metric-label">Customer Engagement</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">100%</div><div class="modal-metric-label">Real-time Data Exchange</div></div>
+        </div>
+        <h3>Project Overview</h3>
+        <p>Architected and deployed an AI-powered NLP chatbot on the retail e-commerce platform for Gardner-White Furniture, one of Michigan's largest furniture retailers. The chatbot handles customer inquiries, product recommendations, order tracking, and support escalation — fully integrated with backend systems for real-time data exchange.</p>
+        <h3>The Business Problem</h3>
+        <p>The customer support team was overwhelmed with repetitive inquiries that could be automated — order status questions, product availability, store hours, and basic troubleshooting. Response times were slow and staff capacity was stretched, impacting customer satisfaction scores.</p>
+        <h3>The Solution</h3>
+        <p>Designed end-to-end chatbot dialogue flows covering the full customer journey. Built intent libraries for every common customer interaction pattern and integrated the chatbot directly with the e-commerce backend for real-time inventory, order, and account data access. The result was 24/7 availability and instant responses across all customer touchpoints.</p>
+        <h3>Delivery & KPIs</h3>
+        <p>Partnered with product owners to define a multi-quarter delivery roadmap. Tracked sprint velocity, defect rate, and release predictability — establishing a performance baseline that improved forecast accuracy by 30%. Reduced customer support volume by 25% within the first quarter post-launch.</p>
+        <h3>Tools & Technologies</h3>
+        <p>NLP Platform · Chatbot Architecture · Dialogue Flow Design · Backend API Integration · Agile Delivery · JIRA · KPI Design · E-Commerce Systems</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ML VS DL -->
+<div class="modal-overlay" id="modal-mldl" onclick="closeOnOverlay(event,'modal-mldl')">
+  <div class="modal">
+    <div class="modal-left"><img src="artifact-3-mldl.png" alt="ML vs DL"/></div>
+    <div class="modal-right">
+      <div class="modal-header">
+        <div><div class="modal-tag">Academic · Machine Learning · Research</div><div class="modal-title">ML vs Deep Learning: Automotive Case Study</div></div>
+        <button class="modal-close" onclick="closeModal('modal-mldl')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="infographic-wrap"><img src="infographic-mldl.png" alt="ML vs DL Infographic"/></div>
+        <h3>Case Study 1 — GM OnStar: Customer Churn Prediction</h3>
+        <p>General Motors applies traditional machine learning (SVM and gradient boosting) to its OnStar subscription service to predict which customers are likely to cancel. The structured, tabular nature of subscription data makes traditional ML ideal, and interpretability is critical so business teams can act on the predictions confidently.</p>
+        <h3>Case Study 2 — Waymo: Autonomous Driving</h3>
+        <p>Waymo's fully driverless robotaxi service uses CNNs and Deep Reinforcement Learning to process raw camera, LiDAR, and radar data in real time. No human engineer could manually define features to distinguish a pedestrian from a signpost across millions of driving scenarios — deep learning learns these automatically from billions of simulated miles.</p>
+        <h3>Full Report</h3>
+        <iframe class="pdf-embed" src="ml-vs-dl-report.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEADERSHIP -->
+<div class="modal-overlay" id="modal-leadership" onclick="closeOnOverlay(event,'modal-leadership')">
+  <div class="modal">
+    <div class="modal-left"><img src="artifact-4-leadership.png" alt="Leadership"/></div>
+    <div class="modal-right">
+      <div class="modal-header">
+        <div><div class="modal-tag">Academic · AI Ethics · Leadership</div><div class="modal-title">Architecting Fair Automotive AI</div></div>
+        <button class="modal-close" onclick="closeModal('modal-leadership')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="infographic-wrap"><img src="infographic-fairness.png" alt="Fairness Infographic"/></div>
+        <h3>Presentation Slides</h3>
+        <div class="slide-viewer">
+          <div class="slide-img-display"><img id="leadership-img" src="leadership-slide-01.png" alt="Slide"/></div>
+          <div class="slide-nav">
+            <button class="slide-arrow" id="ldr-prev" onclick="changeSlide('leadership',slideState.leadership,-1)" disabled>←</button>
+            <span class="slide-counter-text" id="ldr-counter">1 / 10</span>
+            <button class="slide-arrow" id="ldr-next" onclick="changeSlide('leadership',slideState.leadership,1)">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IBM WATSON -->
+<div class="modal-overlay" id="modal-watson" onclick="closeOnOverlay(event,'modal-watson')">
+  <div class="modal">
+    <div class="modal-left"><img src="artifact-5-watson.png" alt="IBM Watson"/></div>
+    <div class="modal-right">
+      <div class="modal-header">
+        <div><div class="modal-tag">Enterprise · Healthcare AI · IBM Watson</div><div class="modal-title">IBM Watson Healthcare AI Assistant</div></div>
+        <button class="modal-close" onclick="closeModal('modal-watson')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-metrics">
+          <div class="modal-metric"><div class="modal-metric-num">40%</div><div class="modal-metric-label">Admin Effort Reduced</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">60+</div><div class="modal-metric-label">Intents Designed</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">120+</div><div class="modal-metric-label">Entities Configured</div></div>
+          <div class="modal-metric"><div class="modal-metric-num">100+</div><div class="modal-metric-label">UAT Cases Executed</div></div>
+        </div>
+        <h3>Project Overview</h3>
+        <p>Led end-to-end business analysis and solution architecture for an IBM Watson-powered AI virtual assistant deployed across a large US healthcare network. The assistant handled symptom triage, appointment scheduling, medication inquiries, and billing navigation — replacing manual administrative workflows at scale.</p>
+        <h3>The Problem</h3>
+        <p>A large healthcare network was overwhelmed with repetitive administrative queries routed to human staff. Staff were spending the majority of their time on low-complexity interactions that could be automated, leaving insufficient capacity for complex patient needs.</p>
+        <h3>The Solution</h3>
+        <p>Architected a HIPAA-compliant IBM Watson Assistant with a dynamic knowledge base capable of resolving clinical queries in real time. Designed 60+ intents, 120+ entities, and complex multi-turn dialog flows that handled edge cases and escalation paths gracefully.</p>
+        <h3>Technical Architecture</h3>
+        <p>Engineered EHR data integration workflows including patient identifier standards, ANSI X12/EDI compliance rules, and data matching algorithms. Built real-time API connections between the Watson assistant and the network's scheduling, billing, and clinical record systems.</p>
+        <h3>Validation</h3>
+        <p>Conducted 25+ stakeholder interviews with clinicians and compliance officers. Developed and executed 100+ UAT test cases validating AI outputs against clinical accuracy benchmarks and HIPAA standards.</p>
+        <h3>Tools & Technologies</h3>
+        <p>IBM Watson Assistant · HIPAA Compliance Frameworks · EHR Systems · ANSI X12/EDI · Dialog Flow Design · UAT Methodology · Agile Delivery · JIRA</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NETFLIX -->
+<div class="modal-overlay" id="modal-netflix" onclick="closeOnOverlay(event,'modal-netflix')">
+  <div class="modal">
+    <div class="modal-left"><img src="artifact-6-netflix.png" alt="Netflix Analytics" onerror="this.src='artifact-6-nlp.png'"/></div>
+    <div class="modal-right">
+      <div class="modal-header">
+        <div><div class="modal-tag">Academic · Data Analytics · Python</div><div class="modal-title">Netflix Data Analytics — The $1B Content Strategy</div></div>
+        <button class="modal-close" onclick="closeModal('modal-netflix')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="infographic-wrap"><img src="infographic-netflix.png" alt="Netflix Infographic"/></div>
+        <h3>Project Overview</h3>
+        <p>End-to-end data analytics project analyzing 8,807 Netflix titles spanning content added between 2008 and 2021. Applied Excel and Python to clean, analyze, and visualize the dataset, uncovering the strategic patterns behind Netflix's $1 billion annual personalization engine.</p>
+        <h3>Presentation Slides</h3>
+        <div class="slide-viewer">
+          <div class="slide-img-display"><img id="netflix-img" src="netflix-slide-01.png" alt="Slide"/></div>
+          <div class="slide-nav">
+            <button class="slide-arrow" id="nfx-prev" onclick="changeSlide('netflix',slideState.netflix,-1)" disabled>←</button>
+            <span class="slide-counter-text" id="nfx-counter">1 / 10</span>
+            <button class="slide-arrow" id="nfx-next" onclick="changeSlide('netflix',slideState.netflix,1)">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+  function closeOnOverlay(e,id) { if(e.target===document.getElementById(id)) closeModal(id); }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') { document.querySelectorAll('.modal-overlay.open').forEach(m=>{ m.classList.remove('open'); document.body.style.overflow=''; }); } });
+
+  const slideState = {
+    leadership: { current:1, total:10, imgId:'leadership-img', counterId:'ldr-counter', prevId:'ldr-prev', nextId:'ldr-next', prefix:'leadership-slide' },
+    netflix:    { current:1, total:10, imgId:'netflix-img',    counterId:'nfx-counter', prevId:'nfx-prev', nextId:'nfx-next', prefix:'netflix-slide' },
+  };
+
+  function changeSlide(name, s, dir) {
+    s.current = Math.max(1, Math.min(s.total, s.current + dir));
+    const pad = String(s.current).padStart(2,'0');
+    document.getElementById(s.imgId).src = `${s.prefix}-${pad}.png`;
+    document.getElementById(s.counterId).textContent = `${s.current} / ${s.total}`;
+    document.getElementById(s.prevId).disabled = s.current === 1;
+    document.getElementById(s.nextId).disabled = s.current === s.total;
+  }
+</script>
+</body>
+</html>
