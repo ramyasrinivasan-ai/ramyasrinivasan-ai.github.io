@@ -26,21 +26,21 @@
     nav { position:fixed; top:0; left:0; right:0; z-index:500; display:flex; align-items:center; justify-content:space-between; padding:1.2rem 6%; background:rgba(8,8,8,0.96); backdrop-filter:blur(20px); border-bottom:1px solid var(--border); }
     .nav-logo { font-family:'Inter',sans-serif; font-weight:300; font-size:0.85rem; color:var(--white); text-decoration:none; letter-spacing:0.22em; text-transform:uppercase; }
     .nav-links { display:flex; gap:2.5rem; list-style:none; }
-    .nav-links a { color:var(--muted); text-decoration:none; font-size:0.78rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:0.85rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
     .nav-links a:hover { color:var(--white); }
     .nav-cta { background:var(--white); color:var(--black); padding:0.55rem 1.4rem; border-radius:4px; font-weight:500; font-size:0.78rem; text-decoration:none; letter-spacing:0.04em; transition:opacity 0.2s; }
     .nav-cta:hover { opacity:0.85; }
 
     /* HERO */
-    #home { min-height:100vh; display:flex; align-items:center; justify-content:center; padding:0 8%; border-bottom:1px solid var(--border); }
-    .hero-inner { display:grid; grid-template-columns:1fr 400px; align-items:center; gap:4rem; width:100%; max-width:1300px; padding:8rem 0 5rem; }
+    #home { min-height:100vh; display:grid; grid-template-columns:1fr 380px; align-items:center; gap:5rem; padding:8rem 6% 5rem; border-bottom:1px solid var(--border); }
+
     .hero-tag { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--border); border-radius:100px; padding:0.3rem 1rem; font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2.5rem; animation:fadeUp 0.6s ease both; }
     .hero-tag span { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
     .hero-content { max-width: 100%; }
     h1 { font-family:'Inter',sans-serif; font-size:clamp(2.8rem,5.5vw,5.2rem); font-weight:200; line-height:1.1; letter-spacing:-0.01em; animation:fadeUp 0.6s 0.1s ease both; }
     h1 em { color:var(--teal); font-style:normal; }
-    .hero-sub { margin-top:2rem; font-size:1.1rem; font-weight:300; color:var(--muted); line-height:1.8; max-width:520px; animation:fadeUp 0.6s 0.2s ease both; }
+    .hero-sub { margin-top:2rem; font-size:1.15rem; font-weight:300; color:var(--muted); line-height:1.8; max-width:520px; animation:fadeUp 0.6s 0.2s ease both; }
     .hero-btns { display:flex; gap:1rem; margin-top:2.8rem; animation:fadeUp 0.6s 0.3s ease both; }
     .btn-p { background:var(--white); color:var(--black); padding:0.85rem 2rem; border-radius:4px; font-weight:500; font-size:0.9rem; text-decoration:none; transition:opacity 0.2s; }
     .btn-p:hover { opacity:0.85; }
@@ -62,15 +62,15 @@
     /* ABOUT */
     #about { background:var(--black2); }
     .about-grid { display:grid; grid-template-columns:1.2fr 0.8fr; gap:5rem; }
-    .about-text p { color:var(--muted); line-height:1.9; font-size:1rem; margin-bottom:1.2rem; font-weight:300; }
+    .about-text p { color:var(--muted); line-height:1.85; font-size:1.1rem; margin-bottom:1.2rem; font-weight:300; }
     .pills { display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:1.8rem; }
-    .pill { border:1px solid var(--border); border-radius:3px; padding:0.3rem 0.85rem; font-size:0.78rem; color:var(--muted); font-weight:300; }
+    .pill { border:1px solid var(--border); border-radius:4px; padding:0.45rem 1rem; font-size:0.92rem; color:var(--muted); font-weight:300; }
     .cert-list { display:flex; flex-direction:column; gap:0.65rem; }
     .cert { background:var(--black3); border:1px solid var(--border); border-radius:8px; padding:1rem 1.2rem; display:flex; align-items:center; gap:0.9rem; transition:border-color 0.2s,transform 0.2s; }
     .cert:hover { border-color:rgba(255,255,255,0.16); transform:translateX(3px); }
     .cert-ic { font-size:1rem; flex-shrink:0; }
-    .cert-name { font-size:0.88rem; font-weight:400; color:var(--white); }
-    .cert-st { font-size:0.74rem; color:var(--muted); margin-top:0.12rem; font-weight:300; }
+    .cert-name { font-size:0.92rem; font-weight:400; color:var(--white); }
+    .cert-st { font-size:0.88rem; color:var(--muted); margin-top:0.12rem; font-weight:300; }
     .cert-st.ok { color:var(--teal); }
 
     /* EXPERIENCE */
@@ -80,11 +80,11 @@
     .tl-item { position:relative; margin-bottom:3rem; padding-left:1.5rem; }
     .tl-item::before { content:''; position:absolute; left:-1.87rem; top:8px; width:8px; height:8px; border-radius:50%; background:var(--teal); }
     .tl-head { display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.3rem; }
-    .tl-role { font-family:'Inter',sans-serif; font-size:1rem; font-weight:500; color:var(--white); }
+    .tl-role { font-family:'Inter',sans-serif; font-size:1.08rem; font-weight:500; color:var(--white); }
     .tl-period { font-size:0.74rem; color:var(--muted); border:1px solid var(--border); border-radius:100px; padding:0.2rem 0.75rem; font-weight:300; }
-    .tl-co { font-size:0.85rem; color:var(--muted); margin-bottom:0.9rem; font-weight:300; }
+    .tl-co { font-size:1rem; color:var(--muted); margin-bottom:0.9rem; font-weight:300; }
     .tl-ul { list-style:none; display:flex; flex-direction:column; gap:0.55rem; }
-    .tl-ul li { font-size:0.92rem; color:var(--muted); line-height:1.75; padding-left:1rem; position:relative; font-weight:300; }
+    .tl-ul li { font-size:1.05rem; color:var(--muted); line-height:1.75; padding-left:1rem; position:relative; font-weight:300; }
     .tl-ul li::before { content:'—'; position:absolute; left:0; color:#2a2a2a; }
 
     /* PROJECTS */
@@ -100,15 +100,15 @@
     .proj-overlay-btn { background:var(--white); color:var(--black); padding:0.65rem 1.5rem; border-radius:4px; font-weight:500; font-size:0.85rem; transform:translateY(8px); transition:transform 0.3s; }
     .proj-card:hover .proj-overlay-btn { transform:translateY(0); }
     .proj-card-tabs { display:flex; gap:0.4rem; margin-top:auto; padding-top:1rem; }
-    .proj-tab-pill { font-size:0.66rem; padding:0.25rem 0.75rem; border-radius:100px; border:1px solid var(--border); color:var(--muted); font-weight:400; cursor:pointer; transition:all 0.2s; background:none; font-family:'DM Sans',sans-serif; letter-spacing:0.04em; }
+    .proj-tab-pill { font-size:0.82rem; padding:0.32rem 0.9rem; border-radius:100px; border:1px solid var(--border); color:var(--muted); font-weight:400; cursor:pointer; transition:all 0.2s; background:none; font-family:'DM Sans',sans-serif; letter-spacing:0.04em; }
     .proj-tab-pill:hover { border-color:var(--teal); color:var(--teal); }
     .proj-tab-pill.first { background:rgba(42,171,171,0.1); border-color:rgba(42,171,171,0.3); color:var(--teal); }
     .proj-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
-    .proj-tag { font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; font-weight:400; }
-    .proj-title { font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:500; color:var(--white); line-height:1.3; margin-bottom:0.6rem; }
-    .proj-desc { font-size:0.85rem; color:var(--muted); line-height:1.7; flex:1; font-weight:300; }
+    .proj-tag { font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; font-weight:400; }
+    .proj-title { font-family:'Inter',sans-serif; font-size:1rem; font-weight:500; color:var(--white); line-height:1.3; margin-bottom:0.6rem; }
+    .proj-desc { font-size:1rem; color:var(--muted); line-height:1.75; flex:1; font-weight:300; }
     .proj-chips { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:1rem; }
-    .chip { font-size:0.68rem; padding:0.2rem 0.6rem; border-radius:3px; border:1px solid var(--border); color:var(--muted); font-weight:300; }
+    .chip { font-size:0.74rem; padding:0.2rem 0.6rem; border-radius:3px; border:1px solid var(--border); color:var(--muted); font-weight:300; }
 
     /* MODAL — SHELBY STYLE: image left, content right */
     .modal-overlay { display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.92); backdrop-filter:blur(12px); align-items:center; justify-content:center; padding:1rem; }
@@ -132,7 +132,7 @@
     .modal-body { flex:1; overflow-y:auto; overflow-x:hidden; padding:1.8rem; min-height:0; }
     .modal-body::-webkit-scrollbar { width:3px; }
     .modal-body::-webkit-scrollbar-thumb { background:#2a2a2a; }
-    .modal-body p { font-size:0.95rem; color:var(--muted); line-height:1.85; margin-bottom:1rem; font-weight:300; }
+    .modal-body p { font-size:1rem; color:var(--muted); line-height:1.85; margin-bottom:1rem; font-weight:300; }
     .modal-body h3 { font-family:'Inter',sans-serif; font-size:0.75rem; font-weight:500; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin:1.6rem 0 0.6rem; }
     .modal-body h3:first-child { margin-top:0; }
     .modal-metrics { display:grid; grid-template-columns:repeat(2,1fr); gap:0.8rem; margin-bottom:1.6rem; }
@@ -141,7 +141,7 @@
     .modal-metric-label { font-size:0.74rem; color:var(--muted); margin-top:0.3rem; font-weight:300; }
     /* TABS */
     .modal-tabs { display:flex; gap:0; border-bottom:1px solid var(--border); flex-shrink:0; padding:0 1.8rem; }
-    .tab-btn { background:none; border:none; color:var(--muted); font-size:0.78rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; padding:0.85rem 1.4rem; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
+    .tab-btn { background:none; border:none; color:var(--muted); font-size:0.9rem; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; padding:0.85rem 1.4rem; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
     .tab-btn.active { color:var(--white); border-bottom-color:var(--teal); }
     .tab-btn:hover { color:var(--white); }
     .tab-panel { display:none; }
@@ -166,8 +166,8 @@
     .edu-card { background:var(--black3); border:1px solid var(--border); border-radius:10px; padding:2rem; transition:border-color 0.2s; }
     .edu-card:hover { border-color:rgba(255,255,255,0.14); }
     .edu-deg { font-family:'Inter',sans-serif; font-size:1rem; font-weight:400; margin-bottom:0.4rem; line-height:1.3; }
-    .edu-school { font-size:0.82rem; color:var(--teal); margin-bottom:0.3rem; font-weight:300; }
-    .edu-det { font-size:0.82rem; color:var(--muted); line-height:1.65; font-weight:300; }
+    .edu-school { font-size:0.88rem; color:var(--teal); margin-bottom:0.3rem; font-weight:300; }
+    .edu-det { font-size:1rem; color:var(--muted); line-height:1.7; font-weight:300; }
 
     /* SKILLS */
     #skills { background:var(--black2); }
@@ -175,7 +175,7 @@
     .sk-cat { background:var(--black3); border:1px solid var(--border); border-radius:10px; padding:1.5rem; }
     .sk-title { font-size:0.72rem; font-weight:500; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
     .sk-list { display:flex; flex-direction:column; gap:0.55rem; }
-    .sk-item { font-size:0.85rem; color:var(--muted); padding-left:0.8rem; position:relative; font-weight:300; }
+    .sk-item { font-size:1rem; color:var(--muted); padding-left:0.8rem; position:relative; font-weight:300; }
     .sk-item::before { content:'·'; position:absolute; left:0; color:var(--teal); }
 
     /* CONTACT */
@@ -190,7 +190,7 @@
 
     @media(max-width:1024px) { .projects-grid { grid-template-columns:repeat(2,1fr); } .skills-grid { grid-template-columns:repeat(2,1fr); } .modal { grid-template-columns:1fr; height:95vh; } .modal-left { max-height:300px; overflow:hidden; } }
     @media(max-width:768px) { .about-grid,.edu-grid { grid-template-columns:1fr; } .projects-grid { grid-template-columns:1fr; } .nav-links { display:none; } h1 { font-size:2.4rem; } #home-wrapper { display:flex; justify-content:center; border-bottom:1px solid var(--border); }
-    .hero-inner { grid-template-columns:1fr; padding:7rem 0 4rem; } .hero-photo-wrap { display:none; } }
+    #home { grid-template-columns:1fr; } .hero-photo-wrap { display:none; } }
 
     /* PROFILE PHOTO */
     .hero-photo-wrap {
@@ -234,6 +234,20 @@
       font-weight: 300;
       line-height: 1.5;
     }
+
+    /* RESUME HIGHLIGHTS */
+    #resume { background:var(--black2); }
+    .resume-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+    .resume-card { background:var(--black3); border:1px solid var(--border); border-radius:12px; padding:1.8rem; transition:border-color 0.2s; }
+    .resume-card:hover { border-color:rgba(255,255,255,0.18); }
+    .resume-card-full { grid-column:1/-1; }
+    .resume-card-header { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:0.4rem; }
+    .resume-role { font-family:'Inter',sans-serif; font-size:1rem; font-weight:500; color:var(--white); line-height:1.3; }
+    .resume-period { font-size:0.76rem; color:var(--teal); border:1px solid rgba(42,171,171,0.3); border-radius:100px; padding:0.22rem 0.75rem; white-space:nowrap; font-weight:400; flex-shrink:0; }
+    .resume-company { font-size:0.86rem; color:var(--muted); margin-bottom:0.9rem; font-weight:300; }
+    .resume-tags { display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:0.9rem; }
+    .resume-tag { font-size:0.72rem; padding:0.22rem 0.65rem; border-radius:4px; background:rgba(42,171,171,0.08); border:1px solid rgba(42,171,171,0.2); color:var(--teal); font-weight:400; }
+    .resume-desc { font-size:1rem; color:var(--muted); line-height:1.8; font-weight:300; }
   </style>
 </head>
 <body>
@@ -246,13 +260,13 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="Srinivasan_Ramya_Resume.pdf" class="nav-cta" download>Resume ↓</a>
 </nav>
 
 <section id="home">
-  <div class="hero-inner">
   <div class="hero-content">
     <div class="hero-tag"><span></span> Open to Senior AI &amp; Solutions Architect Roles</div>
     <h1>Turning Complex Data<br>into <em>Intelligent</em><br>Solutions.</h1>
@@ -260,6 +274,12 @@
     <div class="hero-btns">
       <a href="#projects" class="btn-p">View Projects</a>
       <a href="#contact" class="btn-o">Get in Touch</a>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="metric-num">10<em>+</em></div><div class="metric-label">Years Enterprise AI Experience</div></div>
+      <div class="metric"><div class="metric-num">40<em>%</em></div><div class="metric-label">Admin Effort Cut via IBM Watson</div></div>
+      <div class="metric"><div class="metric-num">25<em>%</em></div><div class="metric-label">Support Volume Cut via NLP Chatbot</div></div>
+      <div class="metric"><div class="metric-num">100<em>+</em></div><div class="metric-label">UAT Cases for Clinical AI Validation</div></div>
     </div>
   </div>
   <div class="hero-photo-wrap">
@@ -270,15 +290,8 @@
     </div>
     <div class="hero-photo-caption">
       <h3>Ramya Srinivasan</h3>
-      <p>AI Solutions Architect · MS in Artificial Intelligence · AZ-900 Certified</p>
+      <p>AI Solutions Architect · MS in Artificial Intelligence</p>
     </div>
-  </div>
-  </div>
-  <div class="metrics" style="width:100%;max-width:1300px;margin:0 auto;padding:2.5rem 0 4rem;">
-    <div class="metric"><div class="metric-num">10<em>+</em></div><div class="metric-label">Years Enterprise AI Experience</div></div>
-    <div class="metric"><div class="metric-num">40<em>%</em></div><div class="metric-label">Admin Effort Cut via IBM Watson</div></div>
-    <div class="metric"><div class="metric-num">25<em>%</em></div><div class="metric-label">Support Volume Cut via NLP Chatbot</div></div>
-    <div class="metric"><div class="metric-num">100<em>+</em></div><div class="metric-label">UAT Cases for Clinical AI Validation</div></div>
   </div>
 </section>
 
@@ -354,7 +367,7 @@
     </div>
 
     <div class="proj-card" onclick="openModal('modal-chatbot')">
-      <div class="proj-img-wrap"><img class="proj-img" src="artifact-2-chatbot.png" alt="NLP Chatbot"/><div class="proj-overlay"><span class="proj-overlay-btn">View Details</span></div></div>
+      <div class="proj-img-wrap"><img class="proj-img" src="artifact-6-nlp.png" alt="NLP Chatbot"/><div class="proj-overlay"><span class="proj-overlay-btn">View Details</span></div></div>
       <div class="proj-body">
         <div class="proj-tag">Enterprise · Retail AI · NLP</div>
         <div class="proj-title">NLP Chatbot — Retail E-Commerce Platform</div>
@@ -454,6 +467,61 @@
   </div>
 </section>
 
+
+<section id="resume">
+  <div class="sec-label">Career Highlights</div>
+  <h2 class="sec-title">Resume <em>Highlights</em></h2>
+  <div class="resume-grid">
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <div class="resume-role">Senior AI Business Analyst & Solution Designer</div>
+        <div class="resume-period">Sep 2019 – Present</div>
+      </div>
+      <div class="resume-company">Retail E-Commerce · Michigan</div>
+      <div class="resume-tags">
+        <span class="resume-tag">25% Support Reduction</span>
+        <span class="resume-tag">NLP Chatbot</span>
+        <span class="resume-tag">Agile</span>
+      </div>
+      <p class="resume-desc">Architected and deployed an AI-powered NLP chatbot enabling 24/7 customer engagement. Improved forecast accuracy by 30% through KPI-driven delivery frameworks.</p>
+    </div>
+
+    <div class="resume-card">
+      <div class="resume-card-header">
+        <div class="resume-role">Business Analyst — AI & Healthcare Systems</div>
+        <div class="resume-period">Mar 2017 – Aug 2019</div>
+      </div>
+      <div class="resume-company">US Healthcare / HIT · Michigan</div>
+      <div class="resume-tags">
+        <span class="resume-tag">40% Effort Reduction</span>
+        <span class="resume-tag">IBM Watson</span>
+        <span class="resume-tag">HIPAA</span>
+      </div>
+      <p class="resume-desc">Led end-to-end architecture for an IBM Watson AI virtual assistant across a large healthcare network. Designed 60+ intents, 120+ entities, and executed 100+ UAT test cases.</p>
+    </div>
+
+    <div class="resume-card resume-card-full">
+      <div class="resume-card-header">
+        <div class="resume-role">MS in Artificial Intelligence & Machine Learning</div>
+        <div class="resume-period">In Progress — 2026</div>
+      </div>
+      <div class="resume-company">Indiana Wesleyan University · Data Analytics Concentration</div>
+      <div class="resume-tags">
+        <span class="resume-tag">Machine Learning</span>
+        <span class="resume-tag">Neural Networks</span>
+        <span class="resume-tag">Data Analytics</span>
+        <span class="resume-tag">Big Data</span>
+      </div>
+      <p class="resume-desc">Graduate coursework covering ML Fundamentals, Data Analytics, Neural Networks, AI Platform Design, and Big Data — building toward senior AI and Solutions Architect roles.</p>
+    </div>
+
+  </div>
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="Srinivasan_Ramya_Resume.pdf" download class="btn-p" style="display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;">📄 Download Full Resume</a>
+  </div>
+</section>
+
 <section id="contact">
   <div class="sec-label">Connect</div>
   <h2 class="sec-title">Get in <em>Touch</em></h2>
@@ -505,7 +573,7 @@
 <!-- NLP CHATBOT -->
 <div class="modal-overlay" id="modal-chatbot" onclick="closeOnOverlay(event,'modal-chatbot')">
   <div class="modal-split">
-    <div class="modal-left"><img src="artifact-2-chatbot.png" alt="NLP Chatbot"/></div>
+    <div class="modal-left"><img src="artifact-6-nlp.png" alt="NLP Chatbot"/></div>
     <div class="modal-right">
       <div class="modal-header">
         <div><div class="modal-tag">Enterprise · Retail AI · NLP</div><div class="modal-title">NLP Chatbot — Retail E-Commerce Platform</div></div>
