@@ -32,7 +32,7 @@
     .nav-cta:hover { opacity:0.85; }
 
     /* HERO */
-    #home { min-height:100vh; display:grid; grid-template-columns:1fr 360px; align-items:start; gap:0; padding:7rem 2% 5rem 6%; border-bottom:1px solid var(--border); }
+    #home { min-height:100vh; display:grid; grid-template-columns:600px 340px; align-items:start; gap:3rem; padding:7rem 6% 5rem 6%; border-bottom:1px solid var(--border); }
     .hero-tag { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--border); border-radius:100px; padding:0.3rem 1rem; font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2.5rem; animation:fadeUp 0.6s ease both; }
     .hero-tag span { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
@@ -88,10 +88,10 @@
 
     /* PROJECTS */
     #projects { background:var(--black2); }
-    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; }
+    .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
     .proj-card { background:var(--black3); border:1px solid var(--border); border-radius:12px; overflow:hidden; cursor:pointer; transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s; display:flex; flex-direction:column; }
     .proj-card:hover { border-color:rgba(255,255,255,0.2); transform:translateY(-6px); box-shadow:0 24px 60px rgba(0,0,0,0.5); }
-    .proj-img-wrap { position:relative; overflow:hidden; aspect-ratio:2/3; }
+    .proj-img-wrap { position:relative; overflow:hidden; aspect-ratio:3/4; }
     .proj-img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform 0.5s ease; }
     .proj-card:hover .proj-img { transform:scale(1.05); }
     .proj-overlay { position:absolute; inset:0; background:rgba(0,0,0,0.55); display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.3s; }
@@ -196,7 +196,6 @@
       align-items: flex-start;
       justify-content: flex-start;
       padding-top: 4.5rem;
-      padding-left: 1rem;
     }
     .hero-photo-outer {
       width: 100%;
@@ -501,6 +500,7 @@
             <div class="modal-metric"><div class="modal-metric-num">24/7</div><div class="modal-metric-label">Customer Engagement</div></div>
             <div class="modal-metric"><div class="modal-metric-num">100%</div><div class="modal-metric-label">Real-time Data Exchange</div></div>
           </div>
+          <img src="infographic-nlp.png" alt="NLP Chatbot Infographic" style="width:100%;height:auto;display:block;border-radius:8px;margin-bottom:1.6rem;"/>
           <h3>Project Overview</h3>
           <p>Architected and deployed an AI-powered NLP chatbot on a major retail e-commerce platform, handling customer inquiries, product recommendations, order tracking, and support escalation — fully integrated with backend systems for real-time data exchange at scale.</p>
           <h3>The Problem</h3>
@@ -513,7 +513,15 @@
           <p>NLP Platform · Chatbot Architecture · Dialogue Flow Design · Backend API Integration · Agile Delivery · JIRA · KPI Design · E-Commerce Systems</p>
         </div>
         <div class="tab-panel" id="chatbot-work">
-          <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1rem;">Presentation coming soon.</p>
+          <h3>Presentation Slides</h3>
+          <div class="slide-viewer">
+            <div class="slide-img-display"><img id="nlp-img" src="nlp-slide-01.png" alt="Slide"/></div>
+            <div class="slide-nav">
+              <button class="slide-arrow" id="nlp-prev" onclick="changeSlide('nlp',slideState.nlp,-1)" disabled>←</button>
+              <span class="slide-counter-text" id="nlp-counter">1 / 10</span>
+              <button class="slide-arrow" id="nlp-next" onclick="changeSlide('nlp',slideState.nlp,1)">→</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -626,7 +634,7 @@
           <div class="slide-img-display"><img id="watson-img" src="watson-slide-01.png" alt="Slide"/></div>
           <div class="slide-nav">
             <button class="slide-arrow" id="wts-prev" onclick="changeSlide('watson',slideState.watson,-1)" disabled>←</button>
-            <span class="slide-counter-text" id="wts-counter">1 / 11</span>
+            <span class="slide-counter-text" id="wts-counter">1 / 10</span>
             <button class="slide-arrow" id="wts-next" onclick="changeSlide('watson',slideState.watson,1)">→</button>
           </div>
         </div>
@@ -706,7 +714,8 @@
   const slideState = {
     leadership: { current:1, total:10, imgId:'leadership-img', counterId:'ldr-counter', prevId:'ldr-prev', nextId:'ldr-next', prefix:'leadership-slide' },
     netflix:    { current:1, total:10, imgId:'netflix-img',    counterId:'nfx-counter', prevId:'nfx-prev', nextId:'nfx-next', prefix:'netflix-slide' },
-    watson:     { current:1, total:11, imgId:'watson-img',     counterId:'wts-counter', prevId:'wts-prev', nextId:'wts-next', prefix:'watson-slide' },
+    nlp:        { current:1, total:10, imgId:'nlp-img',        counterId:'nlp-counter', prevId:'nlp-prev', nextId:'nlp-next', prefix:'nlp-slide' },
+    watson:     { current:1, total:10, imgId:'watson-img',     counterId:'wts-counter', prevId:'wts-prev', nextId:'wts-next', prefix:'watson-slide' },
   };
 
   function changeSlide(name, s, dir) {
