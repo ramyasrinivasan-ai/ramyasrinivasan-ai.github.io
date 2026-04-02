@@ -33,27 +33,27 @@
 
 
     /* GLOBAL CONTAINER */
-    .container { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
-    section { padding: 96px 6%; }
+    .container { width: min(1060px, calc(100% - 48px)); margin: 0 auto; }
+    section { padding: 100px 6%; }
     .sec-title { text-align:center; }
     .sec-label { text-align:center; }
 
     /* HERO */
-    #home { min-height:100vh; display:grid; grid-template-columns:1.1fr 0.9fr; align-items:center; gap:3rem; padding:8rem 6% 5rem; border-bottom:1px solid var(--border); width:min(1120px,calc(100% - 48px)); margin:0 auto; box-sizing:border-box; }
+    #home { min-height:100vh; display:grid; grid-template-columns:1.1fr 0.9fr; align-items:center; gap:4rem; padding:8rem 0 5rem; border-bottom:1px solid var(--border); width:min(1060px,calc(100% - 48px)); margin:0 auto; box-sizing:border-box; }
 
     .hero-tag { display:inline-flex; align-items:center; gap:0.5rem; border:1px solid var(--border); border-radius:100px; padding:0.3rem 1rem; font-size:0.72rem; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1.5rem; animation:fadeUp 0.6s ease both; }
     .hero-tag span { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s infinite; }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-    .hero-content { max-width: 100%; }
+    .hero-content { max-width: 580px; }
     h1 { font-family:'Inter',sans-serif; font-size:clamp(3rem,5.5vw,5.4rem); font-weight:200; line-height:1.1; letter-spacing:-0.01em; animation:fadeUp 0.6s 0.1s ease both; }
     h1 em { color:var(--teal); font-style:normal; }
-    .hero-sub { margin-top:1.2rem; font-size:1.2rem; font-weight:300; color:#c0c0c0; line-height:1.8; max-width:520px; animation:fadeUp 0.6s 0.2s ease both; }
-    .hero-btns { display:flex; gap:1rem; margin-top:1.8rem; animation:fadeUp 0.6s 0.3s ease both; }
+    .hero-sub { margin-top:1.5rem; font-size:1.15rem; font-weight:300; color:#c8c8c8; line-height:1.8; max-width:520px; animation:fadeUp 0.6s 0.2s ease both; }
+    .hero-btns { display:flex; gap:1rem; margin-top:2rem; animation:fadeUp 0.6s 0.3s ease both; }
     .btn-p { background:var(--white); color:var(--black); padding:0.85rem 2rem; border-radius:4px; font-weight:500; font-size:0.9rem; text-decoration:none; transition:opacity 0.2s; }
     .btn-p:hover { opacity:0.85; }
     .btn-o { border:1px solid var(--border); color:var(--white); padding:0.85rem 2rem; border-radius:4px; font-size:0.9rem; text-decoration:none; transition:border-color 0.2s; }
     .btn-o:hover { border-color:rgba(255,255,255,0.3); }
-    .metrics { display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem; margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border); }
+    .metrics { display:grid; grid-template-columns:1fr 1fr; gap:1rem 2rem; margin-top:3rem; padding-top:2rem; border-top:1px solid var(--border); }
     .metric { }
     .metric-num { font-family:'Inter',sans-serif; font-size:2.6rem; font-weight:200; line-height:1; }
     .metric-num em { color:var(--teal); font-style:normal; }
@@ -71,7 +71,7 @@
     .about-grid { display:grid; grid-template-columns:1.2fr 0.8fr; gap:5rem; }
     .about-text p { color:#b8b8b8; line-height:1.85; font-size:1.1rem; margin-bottom:1.2rem; font-weight:300; }
     .pills { display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:1.8rem; }
-    .pill { border:1px solid var(--border); border-radius:4px; padding:0.45rem 1rem; font-size:0.92rem; color:var(--muted); font-weight:300; }
+    .pill { border:1px solid rgba(42,171,171,0.25); border-radius:100px; padding:0.3rem 0.9rem; font-size:0.82rem; color:var(--teal); font-weight:400; background:rgba(42,171,171,0.06); }
     .cert-list { display:flex; flex-direction:column; gap:0.65rem; }
     .cert { background:var(--black3); border:1px solid var(--border); border-radius:8px; padding:1rem 1.2rem; display:flex; align-items:center; gap:0.9rem; transition:border-color 0.2s,transform 0.2s; }
     .cert:hover { border-color:rgba(255,255,255,0.16); transform:translateX(3px); }
@@ -96,8 +96,8 @@
 
     /* PROJECTS */
     #projects { background:var(--black2); }
-    .projects-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 340px)); justify-content:center; gap:28px; }
-    .proj-card { background:var(--black3); border:1px solid var(--border); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; cursor:pointer; transition:border-color 0.25s,transform 0.25s; width:100%; }
+    .projects-grid { display:grid; grid-template-columns:repeat(3, minmax(0, 310px)); justify-content:center; gap:28px; }
+    .proj-card { background:var(--black3); border:1px solid var(--border); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; cursor:pointer; transition:border-color 0.25s,transform 0.25s; max-width:310px; width:100%; }
     .proj-card:hover { border-color:rgba(255,255,255,0.2); transform:translateY(-6px); box-shadow:0 24px 60px rgba(0,0,0,0.5); }
     .proj-img-wrap { position:relative; overflow:hidden; aspect-ratio:4/5; }
     .proj-img { width:100%; height:100%; object-fit:cover; object-position:top; display:block; transition:transform 0.5s ease; }
@@ -110,12 +110,12 @@
     .proj-tab-pill { font-size:0.82rem; padding:0.32rem 0.9rem; border-radius:100px; border:1px solid var(--border); color:var(--muted); font-weight:400; cursor:pointer; transition:all 0.2s; background:none; font-family:'DM Sans',sans-serif; letter-spacing:0.04em; }
     .proj-tab-pill:hover { border-color:var(--teal); color:var(--teal); }
     .proj-tab-pill.first { background:rgba(42,171,171,0.1); border-color:rgba(42,171,171,0.3); color:var(--teal); }
-    .proj-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
+    .proj-body { padding:1rem 1.1rem 1.1rem; flex:1; display:flex; flex-direction:column; }
     .proj-tag { font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted); margin-bottom:0.5rem; font-weight:400; }
-    .proj-title { font-family:'Inter',sans-serif; font-size:1rem; font-weight:500; color:var(--white); line-height:1.3; margin-bottom:0.6rem; }
-    .proj-desc { font-size:0.92rem; color:#b0b0b0; line-height:1.65; flex:1; font-weight:300; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+    .proj-title { font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:500; color:var(--white); line-height:1.3; margin-bottom:0.4rem; }
+    .proj-desc { font-size:0.88rem; color:#b0b0b0; line-height:1.6; flex:1; font-weight:300; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
     .proj-chips { display:flex; flex-wrap:wrap; gap:0.35rem; margin-top:1rem; }
-    .chip { font-size:0.74rem; padding:0.2rem 0.6rem; border-radius:3px; border:1px solid var(--border); color:var(--muted); font-weight:300; }
+    .chip { font-size:0.68rem; padding:0.18rem 0.55rem; border-radius:3px; border:1px solid var(--border); color:#999; font-weight:300; }
 
     /* MODAL — SHELBY STYLE: image left, content right */
     .modal-overlay { display:none; position:fixed; inset:0; z-index:1000; background:rgba(0,0,0,0.92); backdrop-filter:blur(12px); align-items:center; justify-content:center; padding:1rem; }
@@ -178,12 +178,12 @@
 
     /* SKILLS */
     #skills { background:var(--black2); }
-    .skills-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; max-width:1000px; margin:0 auto; }
-    .sk-cat { background:var(--black3); border:1px solid var(--border); border-radius:10px; padding:1.5rem; }
+    .skills-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; max-width:960px; margin:0 auto; }
+    .sk-cat { background:var(--black3); border:1px solid var(--border); border-radius:10px; padding:1.2rem; }
     .sk-title { font-size:0.72rem; font-weight:500; color:var(--white); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem; }
-    .sk-list { display:flex; flex-direction:column; gap:0.55rem; }
-    .sk-item { font-size:1rem; color:#b0b0b0; padding-left:0.8rem; position:relative; font-weight:300; }
-    .sk-item::before { content:'·'; position:absolute; left:0; color:var(--teal); }
+    .sk-list { display:flex; flex-wrap:wrap; gap:0.45rem; }
+    .sk-item { font-size:0.78rem; padding:0.3rem 0.75rem; border-radius:100px; border:1px solid var(--border); color:#aaa; background:rgba(255,255,255,0.03); font-weight:300; }
+
 
     /* CONTACT */
     #contact { background:var(--black2); text-align:center; }
@@ -218,7 +218,8 @@
     }
     .hero-photo-inner img {
       width: 100%;
-      height: 520px;
+      height: 100%;
+      min-height: 560px;
       object-fit: cover;
       object-position: top center;
       border-radius: 16px;
@@ -256,7 +257,6 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a href="Srinivasan_Ramya_Resume.pdf" class="nav-cta" download>Resume ↓</a>
@@ -292,6 +292,7 @@
 </section>
 
 <section id="about">
+  <div class="container">
   <div class="sec-label">About</div>
   <h2 class="sec-title">Engineering Background.<br><em>AI-Forward Thinking.</em></h2>
   <div class="about-grid">
@@ -314,32 +315,25 @@
       <div class="cert"><div class="cert-ic">📊</div><div><div class="cert-name">Certified Business Analyst</div><div class="cert-st ok">✓ Active — Precision Technologies</div></div></div>
     </div>
   </div>
+  </div>
 </section>
 
 <section id="experience">
+  <div class="container">
   <div class="sec-label">Career</div>
   <h2 class="sec-title">Professional <em>Experience</em></h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-head"><div class="tl-role">Senior AI Business Analyst & Solution Designer</div><div class="tl-period">Sep 2019 – Present</div></div>
-      <div class="tl-co">Gardner-White Furniture · Auburn Hills, MI · Retail E-Commerce</div>
-      <ul class="tl-ul">
-        <li>Architected and deployed an AI-powered NLP chatbot, reducing customer support volume by 25% and enabling 24/7 personalized engagement at scale.</li>
-        <li>Designed end-to-end chatbot dialogue flows integrated with backend platforms for real-time data exchange.</li>
-        <li>Partnered with product owners to define a multi-quarter roadmap, improving forecast accuracy by 30% through defined KPI tracking.</li>
-        <li>Conducted gap analysis and SWOT assessments, translating findings into investment proposals for senior leadership.</li>
-      </ul>
+  <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;">
+    <div style="border-left:2px solid var(--teal);padding-left:1.5rem;">
+      <div style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;color:#f0f0f0;">Senior AI Business Analyst & Solution Designer</div>
+      <div style="font-size:0.88rem;color:var(--teal);margin:0.25rem 0 0.6rem;">Sep 2019 – Present · Michigan</div>
+      <p style="font-size:0.95rem;color:#b8b8b8;line-height:1.75;font-weight:300;margin:0;">Architected and deployed an AI-powered NLP chatbot for a major retail e-commerce platform — reducing customer support volume by 25% and improving forecast accuracy by 30%. Led AI solution design, intent architecture, backend API integration, and agile delivery across multiple product teams.</p>
     </div>
-    <div class="tl-item">
-      <div class="tl-head"><div class="tl-role">Business Analyst — AI & Healthcare Systems</div><div class="tl-period">Mar 2017 – Aug 2019</div></div>
-      <div class="tl-co">Streamline Health Care · Michigan · US Healthcare / HIT</div>
-      <ul class="tl-ul">
-        <li>Led end-to-end business analysis for an IBM Watson-powered AI virtual assistant spanning symptom triage, scheduling, and billing navigation across a large healthcare network.</li>
-        <li>Reduced human administrative effort by 40% by architecting HIPAA-compliant dynamic search and AI knowledge base configuration.</li>
-        <li>Designed 60+ intents, 120+ entities and complex medical dialog flows tailored to HIPAA compliance.</li>
-        <li>Developed and executed 100+ UAT test cases validating AI outputs against clinical accuracy benchmarks.</li>
-      </ul>
+    <div style="border-left:2px solid rgba(42,171,171,0.35);padding-left:1.5rem;">
+      <div style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;color:#f0f0f0;">Business Analyst — AI & Healthcare Systems</div>
+      <div style="font-size:0.88rem;color:var(--teal);margin:0.25rem 0 0.6rem;">Mar 2017 – Aug 2019 · US Healthcare</div>
+      <p style="font-size:0.95rem;color:#b8b8b8;line-height:1.75;font-weight:300;margin:0;">Led end-to-end solution architecture for an IBM Watson AI virtual assistant across a large US healthcare network — reducing administrative effort by 40%. Designed 60+ intents, 120+ entities, EHR integrations, and executed 100+ UAT cases against HIPAA and clinical accuracy benchmarks.</p>
     </div>
+  </div>
   </div>
 </section>
 
@@ -433,6 +427,7 @@
     </div>
 
   </div>
+  </div>
 </section>
 
 <section id="education">
@@ -450,6 +445,7 @@
       <div class="edu-det">First Class with Honors</div>
     </div>
   </div>
+  </div>
 </section>
 
 <section id="skills">
@@ -464,33 +460,10 @@
 </section>
 
 
-<section id="resume">
-  <div class="sec-label">Impact</div>
-  <h2 class="sec-title">Selected <em>Impact</em></h2>
-  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; margin-bottom:2.5rem;">
-    <div style="background:var(--black3); border:1px solid var(--border); border-radius:12px; padding:1.8rem; text-align:center;">
-      <div style="font-family:'Inter',sans-serif; font-size:3rem; font-weight:200; color:var(--teal); line-height:1;">40%</div>
-      <div style="font-size:0.88rem; color:var(--muted); margin-top:0.6rem; line-height:1.5;">Admin effort reduced via IBM Watson AI in healthcare</div>
-    </div>
-    <div style="background:var(--black3); border:1px solid var(--border); border-radius:12px; padding:1.8rem; text-align:center;">
-      <div style="font-family:'Inter',sans-serif; font-size:3rem; font-weight:200; color:var(--teal); line-height:1;">25%</div>
-      <div style="font-size:0.88rem; color:var(--muted); margin-top:0.6rem; line-height:1.5;">Customer support volume cut via NLP chatbot deployment</div>
-    </div>
-    <div style="background:var(--black3); border:1px solid var(--border); border-radius:12px; padding:1.8rem; text-align:center;">
-      <div style="font-family:'Inter',sans-serif; font-size:3rem; font-weight:200; color:var(--teal); line-height:1;">10+</div>
-      <div style="font-size:0.88rem; color:var(--muted); margin-top:0.6rem; line-height:1.5;">Years designing enterprise AI solutions across two industries</div>
-    </div>
-    <div style="background:var(--black3); border:1px solid var(--border); border-radius:12px; padding:1.8rem; text-align:center;">
-      <div style="font-family:'Inter',sans-serif; font-size:3rem; font-weight:200; color:var(--teal); line-height:1;">100+</div>
-      <div style="font-size:0.88rem; color:var(--muted); margin-top:0.6rem; line-height:1.5;">UAT cases executed for clinical AI output validation</div>
-    </div>
-  </div>
-  <div style="text-align:center;">
-    <a href="Srinivasan_Ramya_Resume.pdf" download class="btn-p" style="display:inline-flex;align-items:center;gap:0.5rem;text-decoration:none;">📄 Download Full Resume</a>
-  </div>
-</section>
+
 
 <section id="contact">
+  <div class="container">
   <div class="sec-label">Connect</div>
   <h2 class="sec-title">Get in <em>Touch</em></h2>
   <div class="contact-inner">
